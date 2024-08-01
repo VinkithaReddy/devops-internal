@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Lib Management Dummy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+            <div class="title"><h1>Library Management System</h1>
+                </div>
+                <div class="clg-title">
+                    <h1>JNTUH UNIVERSITY COLLEGE OF ENGINEERING MANTHANI</h1>
+                </div>
+            </div>
+            <div>
+            </div>
+        </div>
+        <div class="menu">
+            <ul class="menu-items">
+                <li><a href="#" id="reg-btn">Register</a></li>
+                <li><a href="#" id="login-btn">Login</a></li>
+                <li><a href="#">catalouge</a></li>
+                <li><a href="#">Cart</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div class="branch-books">
+            <div class="branch">
+                <h3 class="branch-title">Branches</h3>
+                <div class="branch-type" id="cse">
+                    <button onclick="show(0,'cse')">CSE</button>
+                </div>
+                <div class="branch-type" id="csm">
+                    <button onclick="show(1,'csm')">CSM</button>
+                </div>
+                <div class="branch-type" id="eee">
+                    <button onclick="show(2,'eee')">EEE</button>
+                </div>
+                <div class="branch-type" id="me">
+                    <button onclick="show(3,'me')">ME</button>
+                </div>
+                <div class="branch-type" id="mi">
+                    <button onclick="show(4,'mi')">MI</button>
+                </div>
+            </div>
+            <div class="books">
+                <p class="books-list">Click any brach to view the books</p>
+            </div>
+        </div>
+        <div class="register nodisp" >
+            <span class="reg-close close">&times;</span>
+            <h1>Register</h1>
+            <div class="reg-box">
+                <section class="label-names">
+                    <label for="name">Name: </label>
+                </section>
+                <input type="text" name="name" id="name"> <br>
+
+                <section class="label-names">
+                    <label for="email">Email: </label>
+                </section>
+                <input type="email" name="email" id="email"><br>
+
+                <section class="label-names">
+                    <label for="pass">Password: </label>
+                </section>
+                <input type="password" name="pass" id="pass"><br>
+
+                <input type="submit" value="Submit" class="submit">
+            </div>
+        </div>
+        <div class="login nodisp" >
+            <span class="log-close close">&times;</span>
+            <h1>Login</h1>
+            <div class="login-box">
+                <section class="label-names">
+                    <label for="email">Email: </label>
+                </section>
+                <input type="email" name="email" id="email"><br>
+
+                <section class="label-names">
+                    <label for="pass">Password: </label>
+                </section>
+                <input type="password" name="pass" id="pass"><br>
+
+                <input type="submit" value="Submit" class="submit">
+            </div>
+        </div>
+    </main>
+    <script type="" src="/script.js"></script>
+</body>
+</html>
+
+
+selenium javascript
+
+[31/07, 9:56 pm] Vishishta CSM: <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample HTML with JS</title>
+    <script>
+        function greet() {
+            var name = document.getElementById("name").value;
+            document.getElementById("greeting").innerHTML = "Hello, " + name + "!";
+        }
+    </script>
+</head>
+<body>
+    <h1>HTML Form with JavaScript</h1>
+    <form>
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" name="name">
+        <button type="button" onclick="greet()">Greet</button>
+    </form>
+    <p id="greeting"></p>
+</body>
+</html>
+[31/07, 9:56 pm] Vishishta CSM: package second;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import java.util.concurrent.TimeUnit;
+public class assign {
+    public static void main(String[] args) {
+        ChromeDriver driver = new ChromeDriver();
+
+        // Open the HTML file
+        driver.get("C:\\Users\\pasup\\eclipse-workspace\\second\\index.html");
+
+        try {
+            // Find the input field and button elements
+            WebElement nameInput = driver.findElement(By.id("name"));
+            WebElement greetButton = driver.findElement(By.tagName("button"));
+
+            // Enter name and click button
+            nameInput.sendKeys("John");
+            greetButton.click();
+
+            // Wait for the greeting to appear
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+            // Verify the greeting message
+            WebElement greetingElement = driver.findElement(By.id("greeting"));
+            String greetingText = greetingElement.getText();
+            if (greetingText.contains("Hello, John!")) {
+                System.out.println("Test Passed!");
+            } else {
+                System.out.println("Test Failed");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            // Close the browser
+            //driver.quit();
+        }
+    }
+}
+
+docker calculator 
+
+[31/07, 9:56 pm] Vishishta CSM: FROM  nginx: lastest  or alpine
+COPY index.html /usr/share/nginx/html/
+EXPOSE 80
+[31/07, 9:56 pm] Vishishta CSM: <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Calculator</title>
+</head>
+<body>
+<div class="calculator">
+    <input type="text" id="display" disabled>
+    <br>
+    <input type="button" value="1" onclick="addToDisplay('1')">
+    <input type="button" value="2" onclick="addToDisplay('2')">
+    <input type="button" value="3" onclick="addToDisplay('3')">
+    <input type="button" value="+" onclick="addToDisplay('+')">
+    <br>
+    <input type="button" value="4" onclick="addToDisplay('4')">
+    <input type="button" value="5" onclick="addToDisplay('5')">
+    <input type="button" value="6" onclick="addToDisplay('6')">
+    <input type="button" value="-" onclick="addToDisplay('-')">
+    <br>
+    <input type="button" value="7" onclick="addToDisplay('7')">
+    <input type="button" value="8" onclick="addToDisplay('8')">
+    <input type="button" value="9" onclick="addToDisplay('9')">
+    <input type="button" value="" onclick="addToDisplay('')">
+    <br>
+    <input type="button" value="0" onclick="addToDisplay('0')">
+    <input type="button" value="." onclick="addToDisplay('.')">
+    <input type="button" value="/" onclick="addToDisplay('/')">
+    <input type="button" value="=" onclick="calculate()">
+    <br>
+    <input type="button" value="C" onclick="clearDisplay()">
+</div>
+
+<script>
+    function addToDisplay(value) {
+        document.getElementById('display').value += value;
+    }
+
+    function calculate() {
+        var display = document.getElementById('display');
+        try {
+            display.value = eval(display.value);
+        } catch (e) {
+            display.value = 'Error';
+        }
+    }
+
+    function clearDisplay() {
+        document.getElementById('display').value = '';
+    }
+</script>
+
+</body>
+</html>
+
+
+simple selenium google launch
+
+
+package srinidhi;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Test1{
+    public static void main(String[] args) {
+    ChromeDriver driver=new ChromeDriver();
+
+   driver.get("https://www.google.com");
+
+   driver.quit();
+ }
+
+}
+
+
+
+commands to run docker
+
+docker build -t newing .
+docker run -d -p 8080:80 newing
+Just these 2 commands
+
