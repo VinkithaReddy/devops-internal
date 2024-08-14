@@ -1,0 +1,11 @@
+jenkins
+username:vinkitha
+password:Vinki@123
+Docker
+username:vinkitha
+password:Vinki@123
+email
+password:vinki@123
+github
+username:VinkithaReddy
+password:Vinkitha@123
