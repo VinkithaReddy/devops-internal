@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Page</title>
+</head>
+<body style="background-color: cyan">
+    <h1>Registration Form</h1>
+    <form action="reg.php" method="POST">
+        Name: <input type="text" name="name"><br>
+        Email: <input type="text" name="email"><br>
+        Password: <input type="text" name="password"><br>
+        Gender:<br>
+        <input type="radio" id="female" name="gender" value="Female">
+        <label for="female">Female</label><br>
+        <input type="radio" id="male" name="gender" value="Male">
+        <label for="male">Male</label><br>
+        Languages Known:<br>
+        <input type="checkbox" id="java" name="languages[]" value="Java">
+        <label for="java">Java</label><br>
+        <input type="checkbox" id="python" name="languages[]" value="Python">
+        <label for="python">Python</label><br>
+        <input type="checkbox" id="sql" name="languages[]" value="Sql">
+        <label for="sql">Sql</label><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+
+
+<?php
+echo "Your name is: " . $_POST["name"] . "<br>";
+echo "Your Email is: " . $_POST["email"] . "<br>";
+echo "Your Password is: " . $_POST["password"] . "<br>";
+echo "Your Gender is: " . $_POST["gender"] . "<br>";
+echo "Languages Known: <br>";
+
+if (isset($_POST["languages"])) {
+    foreach ($_POST["languages"] as $language) {
+        echo $language . "<br>";
+    }
+} else {
+    echo "No languages selected.<br>";
+}
+?>
