@@ -13,3 +13,17 @@ git branch -M main
 git pull origin main --rebase
 
 git push -u origin main
+
+
+docker login 
+docker pull hello-world
+docker run hello world
+docker pull ubuntu
+docker run ubuntu
+docker ps -a
+docker images
+docker start containerId
+docker stop containerId
+docker remove containerId
+docker tag ubuntu:latest vinkitha/ubuntu:latest
+docker run vinkitha
